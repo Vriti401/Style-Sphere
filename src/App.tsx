@@ -17,7 +17,20 @@ export default function App() {
   const [articles, setArticles] = useState<Article[]>(() => {
     try {
       const saved = localStorage.getItem('sartorial_mind_articles');
-      if (saved) return JSON.parse(saved);
+      if (saved) {
+        const parsed: Article[] = JSON.parse(saved);
+        return ARTICLES.map((base) => {
+          const matched = parsed.find((p) => p.id === base.id);
+          if (matched) {
+            return {
+              ...base,
+              comments: matched.comments || base.comments,
+              likesCount: matched.likesCount ?? base.likesCount,
+            };
+          }
+          return base;
+        });
+      }
     } catch {
       // fallback
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Article } from '../types/blog';
-import { HeroPlate } from './HeroPlate';
+import { ArticleImage } from './ArticleImage';
 import { Bookmark, ArrowRight, Clock } from 'lucide-react';
 
 interface HeroLeadProps {
@@ -19,10 +19,10 @@ export const HeroLead: React.FC<HeroLeadProps> = ({
   return (
     <section className="border-b border-[#E7E2D8] pb-12 pt-6">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        {/* Left Column: Visual Plate */}
+        {/* Left Column: Visual Stock Image with Fallback Plate */}
         <div className="lg:col-span-7 cursor-pointer group" onClick={() => onSelect(article)}>
           <div className="aspect-[16/10] w-full rounded border border-stone-800/10 shadow-sm overflow-hidden transition-transform duration-300 group-hover:scale-[1.008]">
-            <HeroPlate plate={article.visualPlate} className="w-full h-full" showOverlayText />
+            <ArticleImage article={article} className="w-full h-full" showOverlayText />
           </div>
         </div>
 

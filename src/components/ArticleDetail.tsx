@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Article, Comment } from '../types/blog';
 import { HeroPlate } from './HeroPlate';
+import { ArticleImage } from './ArticleImage';
 import {
   ArrowLeft,
   Bookmark,
@@ -325,9 +326,9 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
           </div>
         </header>
 
-        {/* Visual Plate Exhibition Banner */}
+        {/* Visual Real Stock Photography Exhibition Banner */}
         <div className="mb-10 aspect-[16/9] w-full rounded overflow-hidden border border-stone-800/10 shadow-sm">
-          <HeroPlate plate={article.visualPlate} className="w-full h-full" showOverlayText />
+          <ArticleImage article={article} className="w-full h-full" showOverlayText />
         </div>
 
         {/* Audio Narration Bar */}

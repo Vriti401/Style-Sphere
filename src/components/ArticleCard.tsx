@@ -1,6 +1,6 @@
 import React from 'react';
 import { Article } from '../types/blog';
-import { HeroPlate } from './HeroPlate';
+import { ArticleImage } from './ArticleImage';
 import { Bookmark, Clock, ArrowUpRight } from 'lucide-react';
 
 interface ArticleCardProps {
@@ -25,7 +25,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         className="group cursor-pointer border-b border-[#E7E2D8] pb-6 last:border-b-0 grid grid-cols-1 sm:grid-cols-12 gap-5 items-center transition-colors"
       >
         <div className="sm:col-span-4 aspect-[4/3] rounded overflow-hidden border border-stone-800/10">
-          <HeroPlate plate={article.visualPlate} className="w-full h-full group-hover:scale-105 transition-transform duration-300" />
+          <ArticleImage article={article} className="w-full h-full group-hover:scale-105 transition-transform duration-300" />
         </div>
         <div className="sm:col-span-8 flex flex-col justify-between h-full">
           <div>
@@ -77,7 +77,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
     >
       <div>
         <div className="aspect-[4/3] rounded overflow-hidden border border-stone-800/10 mb-4">
-          <HeroPlate plate={article.visualPlate} className="w-full h-full group-hover:scale-105 transition-transform duration-300" />
+          <ArticleImage article={article} className="w-full h-full group-hover:scale-105 transition-transform duration-300" />
         </div>
 
         <div className="flex items-center gap-2 text-xs text-stone-500 font-sans uppercase tracking-wider mb-2">

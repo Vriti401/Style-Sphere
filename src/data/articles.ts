@@ -83,6 +83,8 @@ export const ARTICLES: Article[] = [
       texturePattern: 'grid',
       symbolLabel: 'STRUCTURAL RIGOR',
     },
+    imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80',
+    imageCredit: 'Hunters Race / Unsplash',
     comments: [
       {
         id: 'c-101',
@@ -171,6 +173,8 @@ export const ARTICLES: Article[] = [
       texturePattern: 'diagonal',
       symbolLabel: 'SOMATIC SANCTUARY',
     },
+    imageUrl: 'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1200&q=80',
+    imageCredit: 'Camilla Carver / Unsplash',
     comments: [
       {
         id: 'c-201',
@@ -250,6 +254,8 @@ export const ARTICLES: Article[] = [
       texturePattern: 'waves',
       symbolLabel: 'CHROMATIC CATALYST',
     },
+    imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80',
+    imageCredit: 'Laura Chouette / Unsplash',
     comments: [
       {
         id: 'c-301',
@@ -320,6 +326,8 @@ export const ARTICLES: Article[] = [
       texturePattern: 'curtain',
       symbolLabel: 'DRAMATURGICAL CONTRACT',
     },
+    imageUrl: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80',
+    imageCredit: 'Burgess Milner / Unsplash',
     comments: [
       {
         id: 'c-401',
@@ -390,6 +398,8 @@ export const ARTICLES: Article[] = [
       texturePattern: 'scales',
       symbolLabel: 'TRIBAL CAMOUFLAGE',
     },
+    imageUrl: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80',
+    imageCredit: 'Cleo Vermhirn / Unsplash',
     comments: [
       {
         id: 'c-501',
@@ -460,6 +470,8 @@ export const ARTICLES: Article[] = [
       texturePattern: 'weave',
       symbolLabel: 'HAPTIC HOMEOSTASIS',
     },
+    imageUrl: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80',
+    imageCredit: 'Rocknwool / Unsplash',
     comments: [
       {
         id: 'c-601',
@@ -530,6 +542,8 @@ export const ARTICLES: Article[] = [
       texturePattern: 'stripes',
       symbolLabel: 'COGNITIVE CLARITY',
     },
+    imageUrl: 'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1200&q=80',
+    imageCredit: 'Sarah Dorweiler / Unsplash',
     comments: [
       {
         id: 'c-701',
@@ -599,6 +613,8 @@ export const ARTICLES: Article[] = [
       texturePattern: 'tread',
       symbolLabel: 'GRAVITATIONAL ANCHOR',
     },
+    imageUrl: 'https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=1200&q=80',
+    imageCredit: 'NordWood Themes / Unsplash',
     comments: [
       {
         id: 'c-801',
@@ -677,6 +693,8 @@ export const ARTICLES: Article[] = [
       texturePattern: 'spiral',
       symbolLabel: 'PSYCHIC METAMORPHOSIS',
     },
+    imageUrl: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=80',
+    imageCredit: 'Prudence Earl / Unsplash',
     comments: [
       {
         id: 'c-901',
@@ -747,6 +765,8 @@ export const ARTICLES: Article[] = [
       texturePattern: 'botanical',
       symbolLabel: 'ENDURING STEWARDSHIP',
     },
+    imageUrl: 'https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?auto=format&fit=crop&w=1200&q=80',
+    imageCredit: 'Teona Swift / Unsplash',
     comments: [
       {
         id: 'c-1001',

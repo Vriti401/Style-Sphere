@@ -65,6 +65,9 @@ export interface Article {
   featured?: boolean;
   leadStory?: boolean;
   visualPlate: VisualPlate;
+  imageUrl: string;
+  secondaryImageUrl?: string;
+  imageCredit?: string;
   comments: Comment[];
   likesCount: number;
   bookmarksCount: number;
