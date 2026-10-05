@@ -1,0 +1,6 @@
+{
+  "name": "Sartorial Mind — The Psychology of Dress",
+  "description": "An editorial journal exploring enclothed cognition, social armor, dopamine dressing, and how what we wear profoundly shapes personality and cognition.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
