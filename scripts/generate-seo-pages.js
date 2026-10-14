@@ -42,7 +42,7 @@ const SEO_PAGES = [
           </p>
 
           <div class="mb-10 aspect-[16/9] w-full rounded overflow-hidden border border-stone-800/10">
-            <img src="/images/art-02.webp" alt="Textured charcoal wool coat with protective high collar illustrating dressing for confidence and clothing as emotional armor" class="w-full h-full object-cover" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=70&fm=webp" alt="Textured charcoal wool coat with protective high collar illustrating dressing for confidence and clothing as emotional armor" class="w-full h-full object-cover" loading="lazy" />
           </div>
 
           <article class="space-y-8">
@@ -118,7 +118,7 @@ const SEO_PAGES = [
           </p>
 
           <div class="mb-10 aspect-[16/9] w-full rounded overflow-hidden border border-stone-800/10">
-            <img src="/images/art-03.webp" alt="Vibrant yellow and cobalt fashion silk dress in motion demonstrating dopamine dressing, colorful clothes and mood elevation" class="w-full h-full object-cover" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=750&q=68&fm=webp" alt="Vibrant yellow and cobalt fashion silk dress in motion demonstrating dopamine dressing, colorful clothes and mood elevation" class="w-full h-full object-cover" loading="lazy" />
           </div>
 
           <article class="space-y-8">
@@ -182,7 +182,7 @@ const SEO_PAGES = [
           </p>
 
           <div class="mb-10 aspect-[16/9] w-full rounded overflow-hidden border border-stone-800/10">
-            <img src="/images/art-08.webp" alt="Classic welted leather dress brogues and boots resting on stone paving demonstrating how shoes affect posture, shoes and confidence, and footwear psychology" class="w-full h-full object-cover" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=700&q=68&fm=webp" alt="Classic welted leather dress brogues and boots resting on stone paving demonstrating how shoes affect posture, shoes and confidence, and footwear psychology" class="w-full h-full object-cover" loading="lazy" />
           </div>
 
           <article class="space-y-8">

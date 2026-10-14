@@ -26,6 +26,9 @@ export default function App() {
           if (matched) {
             return {
               ...base,
+              imageUrl: base.imageUrl,
+              secondaryImageUrl: base.secondaryImageUrl,
+              imageAlt: base.imageAlt,
               comments: matched.comments || base.comments,
               likesCount: matched.likesCount ?? base.likesCount,
             };

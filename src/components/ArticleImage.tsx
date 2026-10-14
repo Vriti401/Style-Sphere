@@ -14,12 +14,10 @@ export const ArticleImage: React.FC<ArticleImageProps> = ({
   showOverlayText = false,
 }) => {
   const [currentSrc, setCurrentSrc] = useState(article.imageUrl);
-  const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     setCurrentSrc(article.imageUrl);
-    setIsLoaded(false);
     setHasError(false);
   }, [article.imageUrl]);
 
@@ -37,13 +35,6 @@ export const ArticleImage: React.FC<ArticleImageProps> = ({
 
   return (
     <div className={`relative overflow-hidden bg-stone-900 ${className}`}>
-      {/* Background fallback plate while loading */}
-      {!isLoaded && (
-        <div className="absolute inset-0 z-0">
-          <HeroPlate plate={article.visualPlate} className="w-full h-full" />
-        </div>
-      )}
-
       {/* Real High-Resolution Stock Image */}
       <img
         src={currentSrc}
@@ -51,11 +42,8 @@ export const ArticleImage: React.FC<ArticleImageProps> = ({
         referrerPolicy="no-referrer"
         loading="lazy"
         decoding="async"
-        onLoad={() => setIsLoaded(true)}
         onError={handleImageError}
-        className={`w-full h-full object-cover transition-all duration-500 ${
-          isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-        }`}
+        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
       />
 
       {/* Subtle Editorial Vignette Scrim for Contrast & Elegance */}
