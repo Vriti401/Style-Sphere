@@ -241,12 +241,12 @@ export const CognitionLab: React.FC<CognitionLabProps> = ({
                     : selectedItem.id === 'lab-cashmere'
                     ? 'tactile-psyche-fabrics-cortisol-haptics'
                     : selectedItem.id === 'lab-boots'
-                    ? 'footwear-grounding-neuromechanics-of-authority'
+                    ? 'how-shoes-affect-posture'
                     : selectedItem.id === 'lab-silk-dopamine'
-                    ? 'dopamine-dressing-neuroaesthetics-of-color'
+                    ? 'dopamine-dressing'
                     : selectedItem.id === 'lab-minimalist-turtleneck'
                     ? 'the-minimalist-uniform-decision-fatigue-zen'
-                    : 'the-armor-effect-emotional-shielding';
+                    : 'clothing-as-emotional-armor';
                 onSelectArticleBySlug(targetSlug);
               }}
               className="flex items-center gap-1.5 text-xs font-semibold text-[#1C1917] hover:underline cursor-pointer"

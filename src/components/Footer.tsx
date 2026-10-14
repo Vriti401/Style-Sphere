@@ -18,9 +18,18 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#E0D9CC]">
           {/* Brand & Editorial Column */}
           <div className="md:col-span-4 space-y-4">
-            <h3 className="font-serif text-2xl font-medium text-[#1C1917]">
-              Sartorial Mind
-            </h3>
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate('articles');
+              }}
+              className="inline-block"
+            >
+              <h3 className="font-serif text-2xl font-medium text-[#1C1917]">
+                Sartorial Mind
+              </h3>
+            </a>
             <p className="text-sm text-stone-600 leading-relaxed font-sans max-w-sm">
               An independent scholarly journal examining the neuro-cognitive, sociological, and psycho-somatic reverberations of human dress and adornment.
             </p>
@@ -36,36 +45,52 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <ul className="space-y-2 text-sm text-stone-600">
               <li>
-                <button
-                  onClick={() => onNavigate('articles')}
+                <a
+                  href="/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('articles');
+                  }}
                   className="hover:text-stone-900 transition-colors cursor-pointer"
                 >
                   All 10 Essays & Treatises
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => onNavigate('lab')}
+                <a
+                  href="/cognition-lab"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('lab');
+                  }}
                   className="hover:text-stone-900 transition-colors cursor-pointer"
                 >
                   Enclothed Cognition Lab
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => onNavigate('quiz')}
+                <a
+                  href="/archetype-quiz"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('quiz');
+                  }}
                   className="hover:text-stone-900 transition-colors cursor-pointer"
                 >
                   Archetype Diagnostic Tool
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => onNavigate('manifesto')}
+                <a
+                  href="/manifesto"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('manifesto');
+                  }}
                   className="hover:text-stone-900 transition-colors cursor-pointer"
                 >
                   The Sartorial Manifesto
-                </button>
+                </a>
               </li>
             </ul>
           </div>
@@ -77,15 +102,19 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-stone-600">
               {articles.map((art, idx) => (
-                <button
+                <a
                   key={art.id}
-                  onClick={() => onSelectArticle(art)}
-                  className="text-left hover:text-stone-900 transition-colors cursor-pointer truncate"
+                  href={`/${art.slug}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSelectArticle(art);
+                  }}
+                  className="text-left hover:text-stone-900 transition-colors cursor-pointer truncate block"
                   title={art.title}
                 >
                   <span className="font-mono text-stone-400 mr-1.5">{idx + 1}.</span>
                   {art.title}
-                </button>
+                </a>
               ))}
             </div>
           </div>

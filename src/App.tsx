@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ARTICLES } from './data/articles';
 import { Article } from './types/blog';
 import { Header } from './components/Header';
@@ -11,7 +11,9 @@ import { SavedArticlesModal } from './components/SavedArticlesModal';
 import { ManifestoView } from './components/ManifestoView';
 import { NewsletterSection } from './components/NewsletterSection';
 import { Footer } from './components/Footer';
-import { Search, X, Sparkles, Compass, ArrowRight, Filter } from 'lucide-react';
+import { applySeoMetadata, getSeoForPath } from './utils/seo';
+import { SEO_PAGE_MAP } from './data/seoConfig';
+import { Search, X, Sparkles, Compass, ArrowRight } from 'lucide-react';
 
 export default function App() {
   const [articles, setArticles] = useState<Article[]>(() => {
@@ -54,6 +56,72 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
+  // Sync route and metadata from current window location
+  const syncRouteFromLocation = useCallback(() => {
+    const rawPath = window.location.pathname || '/';
+    const cleanPath = rawPath.replace(/\/$/, '') || '/';
+    const slug = cleanPath.replace(/^\//, '');
+
+    if (cleanPath === '/' || cleanPath === '') {
+      setCurrentView('articles');
+      applySeoMetadata(SEO_PAGE_MAP['/']);
+      return;
+    }
+
+    if (cleanPath === '/cognition-lab') {
+      setCurrentView('lab');
+      applySeoMetadata(SEO_PAGE_MAP['/cognition-lab']);
+      return;
+    }
+
+    if (cleanPath === '/archetype-quiz') {
+      setCurrentView('quiz');
+      applySeoMetadata(SEO_PAGE_MAP['/archetype-quiz']);
+      return;
+    }
+
+    if (cleanPath === '/manifesto') {
+      setCurrentView('manifesto');
+      applySeoMetadata(SEO_PAGE_MAP['/manifesto']);
+      return;
+    }
+
+    // Check if it matches any article slug (e.g. clothing-as-emotional-armor, dopamine-dressing, how-shoes-affect-posture)
+    const matchedArticle = articles.find((a) => a.slug === slug || a.slug === cleanPath.replace(/^\//, ''));
+    if (matchedArticle) {
+      setSelectedArticle(matchedArticle);
+      setCurrentView('detail');
+      if (matchedArticle.seo) {
+        applySeoMetadata({
+          title: matchedArticle.seo.metaTitle,
+          metaDescription: matchedArticle.seo.metaDescription,
+          mainKeyword: matchedArticle.seo.mainKeyword,
+          relatedKeywords: matchedArticle.seo.relatedKeywords,
+          canonicalPath: cleanPath,
+          ogType: 'article',
+          h1: matchedArticle.title,
+        });
+      } else {
+        applySeoMetadata(getSeoForPath(cleanPath));
+      }
+      return;
+    }
+
+    // Default fallback to homepage
+    setCurrentView('articles');
+    applySeoMetadata(SEO_PAGE_MAP['/']);
+  }, [articles]);
+
+  // Initial mount route sync and popstate listener
+  useEffect(() => {
+    syncRouteFromLocation();
+    const handlePopState = () => {
+      syncRouteFromLocation();
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [syncRouteFromLocation]);
+
   // Sync bookmarks to localStorage
   useEffect(() => {
     try {
@@ -84,6 +152,46 @@ export default function App() {
   const handleSelectArticle = (article: Article) => {
     setSelectedArticle(article);
     setCurrentView('detail');
+    const path = `/${article.slug}`;
+    if (window.location.pathname !== path) {
+      window.history.pushState(null, '', path);
+    }
+    if (article.seo) {
+      applySeoMetadata({
+        title: article.seo.metaTitle,
+        metaDescription: article.seo.metaDescription,
+        mainKeyword: article.seo.mainKeyword,
+        relatedKeywords: article.seo.relatedKeywords,
+        canonicalPath: path,
+        ogType: 'article',
+        h1: article.title,
+      });
+    } else {
+      applySeoMetadata(getSeoForPath(path));
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigateView = (view: 'articles' | 'lab' | 'quiz' | 'manifesto') => {
+    let path = '/';
+    if (view === 'lab') path = '/cognition-lab';
+    if (view === 'quiz') path = '/archetype-quiz';
+    if (view === 'manifesto') path = '/manifesto';
+
+    if (window.location.pathname !== path) {
+      window.history.pushState(null, '', path);
+    }
+    setCurrentView(view);
+    applySeoMetadata(getSeoForPath(path));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleBackToArticles = () => {
+    if (window.location.pathname !== '/') {
+      window.history.pushState(null, '', '/');
+    }
+    setCurrentView('articles');
+    applySeoMetadata(SEO_PAGE_MAP['/']);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -129,13 +237,10 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FBF9F5] text-[#1C1917] flex flex-col font-sans selection:bg-[#EBE3D5] selection:text-[#1C1917]">
-      {/* Header (Top Bar Contract Compliant) */}
+      {/* Header (Top Bar Contract Compliant with Real URLs) */}
       <Header
         currentView={currentView}
-        onNavigate={(view) => {
-          setCurrentView(view);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+        onNavigate={handleNavigateView}
         savedCount={bookmarkedIds.length}
         onOpenSaved={() => setIsSavedModalOpen(true)}
         onOpenSearch={() => setIsSearchOpen(true)}
@@ -168,17 +273,19 @@ export default function App() {
             <div className="mt-4 max-h-80 overflow-y-auto space-y-2">
               {filteredArticles.length === 0 ? (
                 <p className="text-xs text-stone-500 py-6 text-center">
-                  No treatises matched "{searchQuery}". Try terms like "tailoring", "armor", "dopamine", or "Goffman".
+                  No treatises matched "{searchQuery}". Try terms like "clothing as emotional armor", "dopamine dressing", or "shoes".
                 </p>
               ) : (
                 filteredArticles.map((art) => (
-                  <div
+                  <a
                     key={art.id}
-                    onClick={() => {
+                    href={`/${art.slug}`}
+                    onClick={(e) => {
+                      e.preventDefault();
                       handleSelectArticle(art);
                       setIsSearchOpen(false);
                     }}
-                    className="p-3 rounded hover:bg-[#FBF9F5] cursor-pointer transition-colors flex items-center justify-between group"
+                    className="p-3 rounded hover:bg-[#FBF9F5] cursor-pointer transition-colors flex items-center justify-between group block"
                   >
                     <div>
                       <span className="text-[11px] font-mono uppercase text-stone-400 block">
@@ -189,7 +296,7 @@ export default function App() {
                       </h4>
                     </div>
                     <span className="text-xs font-mono text-stone-400">{art.readTime}</span>
-                  </div>
+                  </a>
                 ))
               )}
             </div>
@@ -206,7 +313,7 @@ export default function App() {
       {currentView === 'detail' && selectedArticle && (
         <ArticleDetail
           article={selectedArticle}
-          onBack={() => setCurrentView('articles')}
+          onBack={handleBackToArticles}
           onSelectArticle={handleSelectArticle}
           allArticles={articles}
           isBookmarked={bookmarkedIds.includes(selectedArticle.id)}
@@ -230,26 +337,29 @@ export default function App() {
       )}
 
       {currentView === 'manifesto' && (
-        <ManifestoView onBackToArticles={() => setCurrentView('articles')} />
+        <ManifestoView onBackToArticles={handleBackToArticles} />
       )}
 
       {currentView === 'articles' && (
         <main className="flex-1 max-w-7xl mx-auto px-6 py-8 w-full">
-          {/* Magazine Sub-Header Marquee Banner */}
-          <div className="pb-6 border-b border-[#E7E2D8] flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div>
-              <p className="text-xs font-mono uppercase tracking-[0.2em] text-stone-500 mb-1">
-                JOURNAL OF EMBODIED COGNITION & SARTORIAL PSYCHOLOGY
-              </p>
-              <h2 className="font-serif text-2xl sm:text-3xl text-stone-900 font-medium tracking-tight">
-                How What We Wear Shapes Who We Become
-              </h2>
-            </div>
-            <div className="text-xs text-stone-500 font-sans md:text-right">
-              <span className="block font-medium text-stone-800">10 Curatorial Treatises in Collection</span>
-              <span>Peer-reviewed clinical & somatic frameworks</span>
-            </div>
-          </div>
+          {/* Magazine Hero Section with Main Keyword in H1, First Paragraph, and Related Keywords in Body */}
+          <section className="pb-8 border-b border-[#E7E2D8]">
+            <p className="text-xs font-mono uppercase tracking-[0.2em] text-stone-500 mb-2">
+              JOURNAL OF EMBODIED COGNITION & SARTORIAL PSYCHOLOGY
+            </p>
+            {/* Main Keyword in H1 */}
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-stone-900 font-medium tracking-tight mb-4 text-balance">
+              Psychology of Dress: Clothes & Mood
+            </h1>
+            {/* Main Keyword naturally in first paragraph */}
+            <p className="text-stone-700 text-base sm:text-lg leading-relaxed font-sans max-w-3xl mb-3">
+              Explore the <strong>psychology of dress</strong>: how what you wear shapes your mood, confidence, and identity. Every day, the fabrics, cuts, and colors we select communicate with our nervous system and alter how we think, decide, and interact with the world.
+            </p>
+            {/* Related Keywords naturally in the body */}
+            <p className="text-stone-600 text-sm sm:text-base leading-relaxed font-sans max-w-3xl">
+              Grounded in the clinical science of <strong>enclothed cognition</strong> and tactile neurobiology, our research explores <strong>how clothes affect mood</strong>, posture, and social authority. Browse our 10 curatorial treatises below.
+            </p>
+          </section>
 
           {/* Lead Story Exhibition Hero */}
           <HeroLead
@@ -259,14 +369,15 @@ export default function App() {
             onToggleBookmark={handleToggleBookmark}
           />
 
-          {/* Interactive Tools Teaser Banner */}
+          {/* Interactive Tools Teaser Banner with Semantic URLs */}
           <section className="my-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div
-              onClick={() => {
-                setCurrentView('lab');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+            <a
+              href="/cognition-lab"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigateView('lab');
               }}
-              className="p-6 rounded border border-[#E7E2D8] bg-[#F7F4EE] hover:border-stone-400 transition-all cursor-pointer group flex items-start justify-between"
+              className="p-6 rounded border border-[#E7E2D8] bg-[#F7F4EE] hover:border-stone-400 transition-all cursor-pointer group flex items-start justify-between block"
             >
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-stone-700">
@@ -281,14 +392,15 @@ export default function App() {
                 </p>
               </div>
               <ArrowRight className="w-5 h-5 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all mt-1 shrink-0" />
-            </div>
+            </a>
 
-            <div
-              onClick={() => {
-                setCurrentView('quiz');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+            <a
+              href="/archetype-quiz"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigateView('quiz');
               }}
-              className="p-6 rounded border border-[#E7E2D8] bg-[#F7F4EE] hover:border-stone-400 transition-all cursor-pointer group flex items-start justify-between"
+              className="p-6 rounded border border-[#E7E2D8] bg-[#F7F4EE] hover:border-stone-400 transition-all cursor-pointer group flex items-start justify-between block"
             >
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-stone-700">
@@ -303,7 +415,7 @@ export default function App() {
                 </p>
               </div>
               <ArrowRight className="w-5 h-5 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all mt-1 shrink-0" />
-            </div>
+            </a>
           </section>
 
           {/* Curated Secondary Features (Tier 2 Salience) */}
@@ -336,12 +448,12 @@ export default function App() {
                 <span className="text-xs uppercase tracking-widest font-sans font-semibold text-stone-500 block mb-1">
                   COMPLETE DISCOURSE COMPENDIUM
                 </span>
-                <h3 className="font-serif text-2xl font-medium text-stone-900">
+                <h2 className="font-serif text-2xl font-medium text-stone-900">
                   All Treatises on Fashion & Identity
-                </h3>
+                </h2>
               </div>
 
-              {/* Functional Segmented Filter Tabs (Buttons with click handlers) */}
+              {/* Functional Segmented Filter Tabs */}
               <div className="flex items-center gap-1.5 overflow-x-auto pb-1 max-w-full">
                 {categories.map((cat) => (
                   <button
@@ -393,10 +505,7 @@ export default function App() {
       <Footer
         articles={articles}
         onSelectArticle={handleSelectArticle}
-        onNavigate={(view) => {
-          setCurrentView(view);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+        onNavigate={handleNavigateView}
       />
     </div>
   );

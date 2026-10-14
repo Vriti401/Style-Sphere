@@ -68,6 +68,13 @@ export interface Article {
   imageUrl: string;
   secondaryImageUrl?: string;
   imageCredit?: string;
+  seo?: {
+    metaTitle: string;
+    metaDescription: string;
+    mainKeyword: string;
+    relatedKeywords: string[];
+    canonicalUrl?: string;
+  };
   comments: Comment[];
   likesCount: number;
   bookmarksCount: number;

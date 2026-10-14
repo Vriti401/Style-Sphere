@@ -581,9 +581,13 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
 
         {/* Previous & Next Article Navigation */}
         <nav className={`mt-16 pt-8 border-t ${borderClass} grid grid-cols-1 sm:grid-cols-2 gap-6`}>
-          <div
-            onClick={() => onSelectArticle(prevArticle)}
-            className={`p-4 rounded border ${borderClass} hover:border-stone-400 transition-colors cursor-pointer group`}
+          <a
+            href={`/${prevArticle.slug}`}
+            onClick={(e) => {
+              e.preventDefault();
+              onSelectArticle(prevArticle);
+            }}
+            className={`p-4 rounded border ${borderClass} hover:border-stone-400 transition-colors cursor-pointer group block`}
           >
             <span className={`text-[11px] uppercase tracking-wider font-sans ${mutedTextClass} block mb-1`}>
               ← Previous Essay
@@ -591,11 +595,15 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
             <h5 className="font-serif text-base font-medium group-hover:text-stone-700 transition-colors line-clamp-1">
               {prevArticle.title}
             </h5>
-          </div>
+          </a>
 
-          <div
-            onClick={() => onSelectArticle(nextArticle)}
-            className={`p-4 rounded border ${borderClass} hover:border-stone-400 transition-colors cursor-pointer text-right group`}
+          <a
+            href={`/${nextArticle.slug}`}
+            onClick={(e) => {
+              e.preventDefault();
+              onSelectArticle(nextArticle);
+            }}
+            className={`p-4 rounded border ${borderClass} hover:border-stone-400 transition-colors cursor-pointer text-right group block`}
           >
             <span className={`text-[11px] uppercase tracking-wider font-sans ${mutedTextClass} block mb-1`}>
               Next Essay →
@@ -603,7 +611,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
             <h5 className="font-serif text-base font-medium group-hover:text-stone-700 transition-colors line-clamp-1">
               {nextArticle.title}
             </h5>
-          </div>
+          </a>
         </nav>
       </main>
     </div>

@@ -20,11 +20,19 @@ export const HeroLead: React.FC<HeroLeadProps> = ({
     <section className="border-b border-[#E7E2D8] pb-12 pt-6">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         {/* Left Column: Visual Stock Image with Fallback Plate */}
-        <div className="lg:col-span-7 cursor-pointer group" onClick={() => onSelect(article)}>
+        <a
+          href={`/${article.slug}`}
+          onClick={(e) => {
+            e.preventDefault();
+            onSelect(article);
+          }}
+          className="lg:col-span-7 cursor-pointer group block"
+          aria-label={`Read article: ${article.title}`}
+        >
           <div className="aspect-[16/10] w-full rounded border border-stone-800/10 shadow-sm overflow-hidden transition-transform duration-300 group-hover:scale-[1.008]">
             <ArticleImage article={article} className="w-full h-full" showOverlayText />
           </div>
-        </div>
+        </a>
 
         {/* Right Column: Editorial Copy */}
         <div className="lg:col-span-5 flex flex-col justify-center">
@@ -40,12 +48,18 @@ export const HeroLead: React.FC<HeroLeadProps> = ({
             </span>
           </div>
 
-          <h1
-            onClick={() => onSelect(article)}
-            className="font-serif text-3xl sm:text-4xl lg:text-[2.65rem] font-medium leading-[1.18] tracking-tight text-[#1C1917] hover:text-stone-700 transition-colors cursor-pointer mb-4 text-balance"
+          <a
+            href={`/${article.slug}`}
+            onClick={(e) => {
+              e.preventDefault();
+              onSelect(article);
+            }}
+            className="group/title block mb-4"
           >
-            {article.title}
-          </h1>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.65rem] font-medium leading-[1.18] tracking-tight text-[#1C1917] group-hover/title:text-stone-700 transition-colors cursor-pointer text-balance">
+              {article.title}
+            </h2>
+          </a>
 
           <p className="text-stone-600 text-base lg:text-lg leading-relaxed mb-6 font-sans">
             {article.subtitle}
@@ -85,13 +99,17 @@ export const HeroLead: React.FC<HeroLeadProps> = ({
                 <Bookmark className={`w-4 h-4 ${isBookmarked ? 'fill-current' : ''}`} />
               </button>
 
-              <button
-                onClick={() => onSelect(article)}
+              <a
+                href={`/${article.slug}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelect(article);
+                }}
                 className="flex items-center gap-2 px-4 py-2 text-xs font-medium text-white bg-[#1C1917] hover:bg-stone-800 transition-colors rounded cursor-pointer whitespace-nowrap"
               >
                 <span>Read Lead Essay</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
