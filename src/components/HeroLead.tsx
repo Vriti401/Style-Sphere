@@ -27,11 +27,12 @@ export const HeroLead: React.FC<HeroLeadProps> = ({
             onSelect(article);
           }}
           className="lg:col-span-7 cursor-pointer group block"
-          aria-label={`Read article: ${article.title}`}
+          aria-label={`Read: ${article.title}`}
         >
           <div className="aspect-[16/10] w-full rounded border border-stone-800/10 shadow-sm overflow-hidden transition-transform duration-300 group-hover:scale-[1.008]">
             <ArticleImage article={article} className="w-full h-full" showOverlayText />
           </div>
+          <span className="sr-only">Read: {article.title}</span>
         </a>
 
         {/* Right Column: Editorial Copy */}
@@ -106,8 +107,9 @@ export const HeroLead: React.FC<HeroLeadProps> = ({
                   onSelect(article);
                 }}
                 className="flex items-center gap-2 px-4 py-2 text-xs font-medium text-white bg-[#1C1917] hover:bg-stone-800 transition-colors rounded cursor-pointer whitespace-nowrap"
+                aria-label={`Read: ${article.title}`}
               >
-                <span>Read Lead Essay</span>
+                <span>Read: {article.title.split(':')[0]}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>

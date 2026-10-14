@@ -88,6 +88,7 @@ export const SavedArticlesModal: React.FC<SavedArticlesModalProps> = ({
                     }}
                     className="p-2 text-stone-700 hover:text-stone-900 cursor-pointer"
                     title="Read essay"
+                    aria-label={`Read: ${article.title}`}
                   >
                     <ArrowUpRight className="w-4 h-4" />
                   </button>
@@ -95,6 +96,7 @@ export const SavedArticlesModal: React.FC<SavedArticlesModalProps> = ({
                     onClick={() => onRemoveBookmark(article.id)}
                     className="p-2 text-stone-400 hover:text-rose-600 transition-colors cursor-pointer"
                     title="Remove from archive"
+                    aria-label={`Remove ${article.title} from reading list`}
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>

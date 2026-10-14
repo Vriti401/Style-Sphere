@@ -13,12 +13,16 @@ const distPath = path.join(__dirname, 'dist');
 // SEO dictionary for server-side HTML responses
 const SEO_MAP = {
   '/': {
-    title: 'Psychology of Dress: Clothes & Mood | Sartorial Mind',
-    description: 'Explore the psychology of dress: how enclothed cognition and what you wear shape your mood, confidence and identity. Read our research-led articles.',
+    title: 'Psychology of Fashion: Clothes & Mood | Sartorial Mind',
+    description: 'Explore the psychology of fashion: how what you wear shapes your mood, confidence and identity. Read our research-led psychology of dress articles.',
+  },
+  '/dressing-for-confidence': {
+    title: 'Dressing for Confidence: Clothing as Emotional Armor',
+    description: 'Learn dressing for confidence with clothing as emotional armor. Discover what to wear to feel confident and handle tough social situations.',
   },
   '/clothing-as-emotional-armor': {
-    title: 'Clothing as Emotional Armor: Dress for Confidence',
-    description: 'Learn how clothing as emotional armor helps you handle tough social situations. Discover dressing for confidence and what to wear to feel powerful.',
+    title: 'Dressing for Confidence: Clothing as Emotional Armor',
+    description: 'Learn dressing for confidence with clothing as emotional armor. Discover what to wear to feel confident and handle tough social situations.',
   },
   '/dopamine-dressing': {
     title: 'Dopamine Dressing: Do Colorful Clothes Boost Mood?',

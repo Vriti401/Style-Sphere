@@ -66,6 +66,7 @@ export interface Article {
   leadStory?: boolean;
   visualPlate: VisualPlate;
   imageUrl: string;
+  imageAlt?: string;
   secondaryImageUrl?: string;
   imageCredit?: string;
   seo?: {

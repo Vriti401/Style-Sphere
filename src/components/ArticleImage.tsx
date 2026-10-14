@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Article } from '../types/blog';
 import { HeroPlate } from './HeroPlate';
 
@@ -13,10 +13,25 @@ export const ArticleImage: React.FC<ArticleImageProps> = ({
   className = '',
   showOverlayText = false,
 }) => {
+  const [currentSrc, setCurrentSrc] = useState(article.imageUrl);
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  if (hasError || !article.imageUrl) {
+  useEffect(() => {
+    setCurrentSrc(article.imageUrl);
+    setIsLoaded(false);
+    setHasError(false);
+  }, [article.imageUrl]);
+
+  const handleImageError = () => {
+    if (currentSrc !== article.secondaryImageUrl && article.secondaryImageUrl) {
+      setCurrentSrc(article.secondaryImageUrl);
+    } else {
+      setHasError(true);
+    }
+  };
+
+  if (hasError || !currentSrc) {
     return <HeroPlate plate={article.visualPlate} className={className} showOverlayText={showOverlayText} />;
   }
 
@@ -31,12 +46,13 @@ export const ArticleImage: React.FC<ArticleImageProps> = ({
 
       {/* Real High-Resolution Stock Image */}
       <img
-        src={article.imageUrl}
-        alt={article.title}
+        src={currentSrc}
+        alt={article.imageAlt || article.title}
         referrerPolicy="no-referrer"
         loading="lazy"
+        decoding="async"
         onLoad={() => setIsLoaded(true)}
-        onError={() => setHasError(true)}
+        onError={handleImageError}
         className={`w-full h-full object-cover transition-all duration-500 ${
           isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
         }`}

@@ -190,6 +190,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
           <button
             onClick={onBack}
             className="flex items-center gap-1.5 font-medium hover:opacity-70 transition-opacity cursor-pointer"
+            aria-label="Return to all essays and treatises"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>All Essays</span>
@@ -375,6 +376,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
                   onClick={() => setAudioProgress(0)}
                   className="p-1 hover:opacity-80 transition-opacity cursor-pointer opacity-60"
                   title="Restart audio"
+                  aria-label="Restart audio narration"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
                 </button>
@@ -588,9 +590,10 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
               onSelectArticle(prevArticle);
             }}
             className={`p-4 rounded border ${borderClass} hover:border-stone-400 transition-colors cursor-pointer group block`}
+            aria-label={`Read previous essay: ${prevArticle.title}`}
           >
             <span className={`text-[11px] uppercase tracking-wider font-sans ${mutedTextClass} block mb-1`}>
-              ← Previous Essay
+              ← Previous: {prevArticle.title.split(':')[0]}
             </span>
             <h5 className="font-serif text-base font-medium group-hover:text-stone-700 transition-colors line-clamp-1">
               {prevArticle.title}
@@ -604,9 +607,10 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
               onSelectArticle(nextArticle);
             }}
             className={`p-4 rounded border ${borderClass} hover:border-stone-400 transition-colors cursor-pointer text-right group block`}
+            aria-label={`Read next essay: ${nextArticle.title}`}
           >
             <span className={`text-[11px] uppercase tracking-wider font-sans ${mutedTextClass} block mb-1`}>
-              Next Essay →
+              Next: {nextArticle.title.split(':')[0]} →
             </span>
             <h5 className="font-serif text-base font-medium group-hover:text-stone-700 transition-colors line-clamp-1">
               {nextArticle.title}

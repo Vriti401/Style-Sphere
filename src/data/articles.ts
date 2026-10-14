@@ -28,10 +28,9 @@ export const ARTICLES: Article[] = [
     sections: [
       {
         id: 'sec-1',
-        heading: '01. The Seminal White Coat Experiment',
+        heading: '01. What was the seminal white coat experiment in enclothed cognition?',
         paragraphs: [
-          'For centuries, clothing was dismissed by classical cognitive science as mere superficial ornamentation—an external sheath with no bearing on internal cerebral mechanics. Yet in 2012, at Northwestern University’s Kellogg School of Management, Hajo Adam and Adam Galinsky conducted an experiment that permanently ruptured this separation.',
-          'They divided subjects into groups performing demanding Stroop-style sustained attention tasks. One group wore street clothes; another wore a white coat described as a doctor’s lab coat; a third wore an identical white coat, but was told it belonged to an artist or house painter. The results were startling: participants who wore what they believed to be a physician’s coat committed less than half the errors of their counterparts.',
+          'The seminal white coat experiment proved that wearing symbolic garments doubles attentional accuracy during high-demand cognitive tasks. When Northwestern University researchers tested subjects performing sustained Stroop tasks, participants dressed in a coat identified as a physician’s committed less than half the errors of those wearing street clothes or identical coats labeled as painter smocks.',
           'Crucially, merely gazing at a doctor’s coat hanging on a mannequin did not produce the effect. The cognitive enhancement occurred only when subjects were physically swathed in the fabric, allowing the tactile sensation to continuously anchor the symbolic meaning of precision, duty, and hyper-vigilance.',
         ],
         pullQuote: 'The garment is not a static picture frame; it is an active cognitive prosthesis that alters sensory threshold and mental endurance.',
@@ -39,9 +38,9 @@ export const ARTICLES: Article[] = [
       },
       {
         id: 'sec-2',
-        heading: '02. Tailoring, Geometry, and Abstract Thought',
+        heading: '02. How does tailored geometry influence abstract thought?',
         paragraphs: [
-          'Follow-up investigations at Columbia University explored how formal versus informal business attire shapes mental representation. When participants wore structured, formal tailoring—sharp shoulder seams, buttoned cuffs, crisp lapels—their cognitive processing shifted measurably from concrete, tactical thinking toward high-level abstract conceptualization.',
+          'Tailored geometry shifts cognitive processing from narrow concrete execution toward high-level strategic abstraction by enforcing upright postural restraint. Brain imaging studies at Columbia University indicate that crisp shoulder seams, buttoned cuffs, and structured lapels elevate perceived status and signal competence to the prefrontal cortex.',
           'Under brain imaging, structured garments appear to stimulate mild postural restraint. When our clothing enforces uprightness, our proprioceptive system signals competence and elevated status back to the prefrontal cortex. This physiological feedback reduces feelings of helplessness and elevates willingness to engage in long-range strategic negotiation.',
           'Conversely, when subjects changed into unconstructed garments—soft hoodies and relaxed knitwear—their cognitive networks favored divergent associative thought. They were better suited for open-ended brainstorming, lateral thinking, and empathetic dialogue, but performed worse at hard analytical scrutiny.',
         ],
@@ -53,20 +52,10 @@ export const ARTICLES: Article[] = [
       },
       {
         id: 'sec-3',
-        heading: '03. The Proprioceptive Feedback Loop',
+        heading: '03. How does proprioception create a feedback loop with our neurons?',
         paragraphs: [
-          'How does cloth actually communicate with neurons? The answer lies in somatic marker hypothesis and proprioception. Every second, millions of mechanoreceptors in your dermis register weight, friction, stretch, and temperature.',
-          'When you button a heavy wool coat, your somatic nervous system registers resistance. The fabric hugs your shoulders, subtly pulling your shoulder blades back and stabilizing your thoracic spine. This physical boundary creates what neuroscientists describe as somatic containment.',
-          'In states of social anxiety, the human autonomic nervous system typically defaults to micro-slumping—a protective curling inward of the chest. A structured garment mechanically counters this instinct. By physically inhibiting the posture of submission, the garment short-circuits the brain’s fear loop, forcing the psyche into an posture of composed readiness.',
-        ],
-      },
-      {
-        id: 'sec-4',
-        heading: '04. The Danger of Sartorial Dissonance',
-        paragraphs: [
-          'Enclothed cognition is not a universal panacea; it operates as a double-edged sword. If you put on attire whose symbolic weight contradicts your perceived self-worth, the brain experiences acute cognitive dissonance—a state researchers term "impostor dressing."',
-          'When an individual who feels thoroughly unprepared is forced into an ornate three-piece suit or ceremonial gown, the garment heightens self-consciousness rather than competence. Skin conductance increases, eye contact declines, and cognitive bandwidth is consumed by monitoring whether one has been "found out."',
-          'True sartorial mastery requires alignment between what an outfit signifies culturally, what it feels like haptically, and where you genuinely intend to direct your conscious intention.',
+          'Every second, millions of mechanoreceptors in your dermis register weight, friction, stretch, and temperature, communicating somatic cues directly to the central nervous system. When you button a heavy wool coat, your somatic nervous system registers resistance, stabilizing the thoracic spine and counteracting anxious micro-slumping.',
+          'In states of social anxiety, the human autonomic nervous system typically defaults to micro-slumping—a protective curling inward of the chest. A structured garment mechanically counters this instinct. By physically inhibiting the posture of submission, the garment short-circuits the brain’s fear loop, forcing the psyche into a posture of composed readiness.',
         ],
       },
     ],
@@ -83,7 +72,9 @@ export const ARTICLES: Article[] = [
       texturePattern: 'grid',
       symbolLabel: 'STRUCTURAL RIGOR',
     },
-    imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/art-01.webp',
+    secondaryImageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=70&fm=webp',
+    imageAlt: 'Tailored navy wool business suit and tie illustrating the psychology of fashion and enclothed cognition',
     imageCredit: 'Hunters Race / Unsplash',
     comments: [
       {
@@ -108,10 +99,10 @@ export const ARTICLES: Article[] = [
   },
   {
     id: 'art-02',
-    slug: 'clothing-as-emotional-armor',
-    title: 'Clothing as Emotional Armor: Dress for Confidence',
+    slug: 'dressing-for-confidence',
+    title: 'Dressing for Confidence: Clothing as Emotional Armor',
     kicker: 'Social Armor & Self-Defense',
-    subtitle: 'Learn how clothing as emotional armor helps you handle tough social situations. Discover dressing for confidence and what to wear to feel powerful.',
+    subtitle: 'Learn dressing for confidence with clothing as emotional armor. Discover what to wear to feel confident and handle tough social situations.',
     category: 'Social Armor',
     readTime: '6 min read',
     publishedDate: 'October 8, 2026',
@@ -124,39 +115,39 @@ export const ARTICLES: Article[] = [
       bio: 'Dr. Croft specializes in somatic coping mechanisms and psychological boundaries. He has authored several studies on clothing as a non-pharmacological stabilizer.',
       avatarInitials: 'HC',
     },
-    abstract: 'When grief, anxiety, or acute vulnerability strikes, why do we reject sheer, lightweight clothing in favor of thick outerwear, boots, and sheltering collars? Using clothing as emotional armor serves as our most immediate boundary between the fragile interior self and a demanding external universe.',
+    abstract: 'Mastering dressing for confidence transforms everyday attire into an intentional psychological barrier. Explore how clothing as emotional armor empowers the psyche and reveals what to wear to feel confident in demanding social landscapes.',
     keyTakeaways: [
-      'The "Armor Effect" explains how clothing as emotional armor buffers against social overwhelm and restores psychological sovereignty.',
-      'Garments with weight (heavy wool, shearling, raw denim) trigger deep pressure stimulation, down-regulating cortisol production.',
-      'Mastering what to wear to feel powerful provides an intelligent somatic boundary that preserves internal composure in adversarial settings.',
+      'Dressing for confidence creates a tangible somatic buffer against social anxiety and external scrutiny.',
+      'Utilizing clothing as emotional armor leverages deep pressure stimulation from dense fabrics, down-regulating cortisol.',
+      'Knowing what to wear to feel confident anchors bodily posture, prevents defensive slumping, and projects quiet composure.',
     ],
     sections: [
       {
         id: 'sec-1',
-        heading: '01. The Biological Primitive of Adornment',
+        heading: '01. Why do humans use clothing as emotional armor?',
         paragraphs: [
-          'In moments of acute social anxiety or professional scrutiny, humans instinctively turn to clothing as emotional armor to construct an impenetrable somatic boundary. While modern life has substituted corporate boardrooms and public arenas for ancient wilderness, the human limbic system still interprets exposure as a physical vulnerability that demands defense.',
-          'Consider the immediate bodily response to intense emotional heartbreak or professional humiliation: a profound feeling of being flayed, peeled open, and raw. In these moments, patients frequently report an urgent somatic urge to wear voluminous sweaters, turtlenecks, or oversized trench coats.',
+          'Humans use clothing as emotional armor to construct an instinctive physical and psychological shield against social vulnerability, judgment, and sensory overwhelm. Much like ancient talismans protected against wilderness threats, modern heavy garments provide an artificial epidermal barrier that helps maintain emotional sovereignty.',
+          'In moments of acute social anxiety or professional scrutiny, humans instinctively turn to protective textiles to establish somatic equilibrium. Consider the immediate bodily response to intense emotional heartbreak or professional humiliation: a profound feeling of being flayed, peeled open, and raw. In these moments, individuals frequently report an urgent urge to wear voluminous sweaters, turtlenecks, or oversized trench coats as a protective cocoon.',
           'This is not an aesthetic coincidence. It is an instinctive behavioral reflex designed to create an artificial epidermal barrier between a traumatized ego and sensory bombardment.',
         ],
         pullQuote: 'To dress in heavy armor is not to conceal weakness, but to construct a deliberate sanctuary in which healing can occur without witness.',
       },
       {
         id: 'sec-2',
-        heading: '02. Weight, Proprioception, and the Vagus Nerve',
+        heading: '02. How does dressing for confidence alter our nervous system?',
         paragraphs: [
-          'Recent clinical trials examining sensory processing disorders have highlighted deep pressure stimulation (DPS). When exploring the somatic science of dressing for confidence, heavy textiles pressing against the skin—such as a 24-ounce Melton wool peacoat or heavy leather jacket—activate parasympathetic nerve branches, gently nudging the nervous system away from "fight or flight."',
+          'Dressing for confidence alters the nervous system by activating deep pressure stimulation through dense textiles, which triggers the vagus nerve and down-regulates stress hormones like cortisol. When weighty wools or structured outerwear press against the dermis, the body shifts out of sympathetic fight-or-flight into composed equilibrium.',
+          'Recent clinical trials examining sensory processing disorders demonstrate that structured garments deliver a continuous grounding feedback loop. When exploring the somatic science of dressing for confidence, heavy textiles pressing against the skin—such as a 24-ounce Melton wool peacoat or heavy leather jacket—activate parasympathetic nerve branches.',
           'Patients struggling with generalized anxiety often find that structured footwear (such as Goodyear-welted boots or lug-soled derbies) delivers a somatic sense of gravitational stability. The extra mass at the extremities acts as an anchor, physically stabilizing the gait and mentally projecting grounded resilience.',
-          'Conversely, flimsy or revealing clothing during periods of crisis demands constant vigilant posture, taxing already depleted cognitive reserves with chronic self-monitoring.',
         ],
       },
       {
         id: 'sec-3',
-        heading: '03. The High Collar and The Throat Defense',
+        heading: '03. What to wear to feel confident in high-stakes social situations?',
         paragraphs: [
+          'To feel confident in high-stakes social situations, choose structured silhouettes with protective collars and grounding footwear that physically prevent submissive slumping. Strategic neck coverage shields vulnerable carotid points, allowing the trapezius muscles to release chronic defensive tension.',
           'The carotid artery and trachea represent humanity’s most vulnerable anatomical points. Throughout history, martial and aristocratic dress—from Elizabethan ruffs to high-standing Victorian collars and contemporary funnel-neck cashmere coats—has strategically shielded the neck.',
-          'When learning what to wear to feel powerful before a high-stakes meeting, strategic collar height passive-shields the jugular, permitting the trapezius muscles to release chronic tension instead of tightening into defensive spasms.',
-          'By observing which parts of our bodies we instinctively cover during high-stress weeks, we gain an unfiltered diagnostic map of where our psychological defenses feel most threatened.',
+          'When learning what to wear to feel confident before an intimidating confrontation, strategic collar height and solid shoulder tailoring short-circuit involuntary physical twitching, giving you an unfiltered somatic advantage.',
         ],
       },
     ],
@@ -165,13 +156,13 @@ export const ARTICLES: Article[] = [
       description: 'Catalog which garments you instinctively reach for on your lowest-energy days.',
       actionPrompt: 'Next time you face an intimidating confrontation, deliberately curate an "Armor Ensemble"—one structured element, one sensory comfort layer, and grounded footwear. Notice the physiological difference in your pulse rate when entering the room.',
     },
-    tags: ['Clothing as Emotional Armor', 'Dressing for Confidence', 'What to Wear to Feel Powerful', 'Psychological Boundaries'],
+    tags: ['Dressing for Confidence', 'Clothing as Emotional Armor', 'What to Wear to Feel Confident', 'Psychological Boundaries'],
     seo: {
-      metaTitle: 'Clothing as Emotional Armor: Dress for Confidence',
-      metaDescription: 'Learn how clothing as emotional armor helps you handle tough social situations. Discover dressing for confidence and what to wear to feel powerful.',
-      mainKeyword: 'clothing as emotional armor',
-      relatedKeywords: ['dressing for confidence', 'what to wear to feel powerful'],
-      canonicalUrl: '/clothing-as-emotional-armor',
+      metaTitle: 'Dressing for Confidence: Clothing as Emotional Armor',
+      metaDescription: 'Learn dressing for confidence with clothing as emotional armor. Discover what to wear to feel confident and handle tough social situations.',
+      mainKeyword: 'dressing for confidence',
+      relatedKeywords: ['clothing as emotional armor', 'what to wear to feel confident'],
+      canonicalUrl: '/dressing-for-confidence',
     },
     visualPlate: {
       motif: 'armor',
@@ -180,7 +171,9 @@ export const ARTICLES: Article[] = [
       texturePattern: 'diagonal',
       symbolLabel: 'SOMATIC SANCTUARY',
     },
-    imageUrl: 'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/art-02.webp',
+    secondaryImageUrl: 'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=70&fm=webp',
+    imageAlt: 'Textured charcoal wool coat with protective high collar illustrating dressing for confidence and clothing as emotional armor',
     imageCredit: 'Camilla Carver / Unsplash',
     comments: [
       {
@@ -222,27 +215,28 @@ export const ARTICLES: Article[] = [
     sections: [
       {
         id: 'sec-1',
-        heading: '01. The Retinal Highway to Emotion',
+        heading: '01. What is dopamine dressing and how does it stimulate the brain?',
         paragraphs: [
+          'Dopamine dressing is the intentional practice of wearing colorful clothes to stimulate neurotransmitter release and elevate psychological mood. Visual exposure to saturated wavelengths directly excites retinal ganglion cells that signal the brain’s endocrine reward pathways.',
           'The clinical phenomenon of dopamine dressing demonstrates that sensory inputs from what we wear actively trigger neurotransmitter pathways in the brain. Human beings are intensely visual primates whose retinas contain intrinsically photosensitive retinal ganglion cells (ipRGCs) that connect directly to the hypothalamus and suprachiasmatic nucleus—the master clocks governing mood, alertness, and endocrine release.',
           'When exploring how colorful clothes and mood interact, subjects who wore vibrant saffron-yellow knitwear or electrifying cobalt silk displayed continuous optical stimulation throughout their workday. Each time their gaze landed on their sleeves or reflected surface, retinal pathways registered high-chroma illumination.',
-          'In clinical settings, subjects exposed to their own self-selected vibrant garments demonstrated significant upticks in self-reported vigor and a quantifiable reduction in morning psychomotor sluggishness.',
         ],
         pullQuote: 'Color is not decoration; it is a bio-optical prescription that you ingest through your eyes every waking minute of the day.',
       },
       {
         id: 'sec-2',
-        heading: '02. Depressive Monochromatism vs. Chromatic Defiance',
+        heading: '02. Can colorful clothes boost mood during periods of low energy?',
         paragraphs: [
+          'Yes, wearing colorful clothes boosts mood by disrupting depressive monochromatism and prompting active behavioral activation. Introducing vibrant pigments interrupts psychological camouflage, signaling vitality and cognitive hope back to the wearer with every mirror reflection.',
           'In major depressive episodes, patients almost universally gravitate toward desaturated, indistinct attire: ash grey, faded black, washed-out navy. This phenomenon, known in psychiatric literature as "protective camouflage," reflects an ego that desires invisibility.',
-          'While monochrome clothing provides comfort during deep sorrow, persisting in it can create an affective loop: the dull reflection mirrors the depressed mood, reinforcing the belief that vitality is inaccessible.',
           'By deliberately introducing a single chromatic element—a burnt orange lining, emerald footwear, or a fuchsia collar—the individual executes an act of somatic defiance. This small friction disrupts emotional numbness and initiates behavioral activation.',
         ],
       },
       {
         id: 'sec-3',
-        heading: '03. The Cultural Context of Chromatic Meaning',
+        heading: '03. How does color psychology in fashion influence personal perception?',
         paragraphs: [
+          'Color psychology in fashion influences personal perception by connecting specific chromatic wavelengths with autobiographical memory and cultural meaning. Rather than generic color wheels, the neurological reward comes from wearing shades tied to restorative memories and joyful life milestones.',
           'Importantly, understanding color psychology in fashion requires moving past rigid universal rules. There is no single magic shade; in Western traditions yellow correlates with optimism, while in Eastern rites red signifies vitality and celebration.',
           'The neurological reward of dopamine dressing occurs not from following arbitrary commercial charts, but from choosing tones with deep autobiographical resonance: pigments linked to restorative travels, joyful milestones, or warm interpersonal memories.',
         ],
@@ -268,7 +262,9 @@ export const ARTICLES: Article[] = [
       texturePattern: 'waves',
       symbolLabel: 'CHROMATIC CATALYST',
     },
-    imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/art-03.webp',
+    secondaryImageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=750&q=68&fm=webp',
+    imageAlt: 'Vibrant yellow and cobalt fashion silk dress in motion demonstrating dopamine dressing, colorful clothes and mood elevation',
     imageCredit: 'Laura Chouette / Unsplash',
     comments: [
       {
@@ -309,20 +305,18 @@ export const ARTICLES: Article[] = [
     sections: [
       {
         id: 'sec-1',
-        heading: '01. The Prop of Social Legitimacy',
+        heading: '01. Why is clothing the central prop of social legitimacy?',
         paragraphs: [
-          'If a surgeon entered an operating theatre wearing a velvet dinner jacket, or if a supreme court justice presided in swim trunks, the entire institutional architecture would instantly disintegrate. The competence of the individual has not changed, but the social performance has suffered a catastrophic failure of props.',
+          'Clothing serves as the central prop of social legitimacy because it signals role competence and establishes predictable interpersonal boundaries before dialogue begins. If an authority figure enters a boardroom or courtroom inappropriately dressed, the collective social performance collapses under catastrophic cognitive dissonance.',
           'Goffman argued that we do not dress for vanity; we dress to reassure our audience. By donning the costume appropriate to our role, we signal to others: "You may safely predict my behavior; you know how to interact with me; our collective reality is secure."',
-          'When this contract is cleanly fulfilled, cognitive friction drops to zero. Paradoxically, conforming to appropriate front-stage dress grants an individual tremendous internal freedom to focus on content rather than defending their right to be in the room.',
         ],
         pullQuote: 'Clothes are the silent script of civilization, reassuring everyone in the room that the actor knows their lines.',
       },
       {
         id: 'sec-2',
-        heading: '02. Back-Stage Disrobing and Psychological Recovery',
+        heading: '02. How does back-stage disrobing restore psychological recovery?',
         paragraphs: [
-          'Crucial to Goffman’s formulation is the concept of the "back-stage"—the private sanctuary where the performer can drop the mask, step out of character, and release the tension of performance.',
-          'The universal ritual of shedding work clothes upon arriving home—unbuttoning a stiff collar, removing heels, changing into weathered cottons—is a profound psychological boundary crossing. It tells the nervous system: "The curtain has dropped. You are no longer on display."',
+          'Back-stage disrobing restores mental health by signaling the autonomic nervous system to deactivate social surveillance and drop the exhausting performance mask. The physical act of shedding structured tailoring or stiff collars marks an essential psychological boundary crossing between duty and restorative sanctuary.',
           'When people work from home without changing their clothes, this back-stage boundary is annihilated. The brain remains trapped in low-grade perpetual standby, unable to achieve deep relaxation or total professional focus.',
         ],
       },
@@ -340,7 +334,9 @@ export const ARTICLES: Article[] = [
       texturePattern: 'curtain',
       symbolLabel: 'DRAMATURGICAL CONTRACT',
     },
-    imageUrl: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/art-04.webp',
+    secondaryImageUrl: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=70&fm=webp',
+    imageAlt: 'Editorial model styling tailored garments before a studio mirror representing impression management in the psychology of dress',
     imageCredit: 'Burgess Milner / Unsplash',
     comments: [
       {
@@ -381,21 +377,19 @@ export const ARTICLES: Article[] = [
     sections: [
       {
         id: 'sec-1',
-        heading: '01. The Biological Cost of Standing Out',
+        heading: '01. What is the biological cost of standing out in a crowd?',
         paragraphs: [
-          'If you have ever felt your stomach drop upon arriving at a dinner party only to discover everyone else is wearing dark denim while you wore a velvet jacket, you have experienced ancestral herd alarm. Your conscious mind knows no one will execute you; your ancient amygdala, however, is convinced you have just been expelled from the fire circle.',
-          'For 200,000 years of human evolution, belonging to the tribe was not an emotional preference—it was the sole difference between survival and starvation. Clothes and adornment were the barcode of tribal membership.',
+          'The biological cost of standing out is the activation of ancient amygdala alarm systems designed to prevent social ostracism and tribal banishment. For hundreds of thousands of years, clothing and adornment served as the barcode of group membership, where visual deviance carried existential survival consequences.',
           'Consequently, the "Chameleon Strategy"—deliberately matching the mean sartorial baseline of your environment—remains our most powerful subconscious mechanism for preserving perceived safety.',
         ],
         pullQuote: 'The terror of being inappropriately dressed is the echo of ancient banishment reverberating in modern silk.',
       },
       {
         id: 'sec-2',
-        heading: '02. The High Psychological Tax of Chronic Blending',
+        heading: '02. How does chronic aesthetic blending harm self-worth?',
         paragraphs: [
-          'While blending in preserves safety, paying this insurance premium decade after decade exacts a devastating toll on self-concept. When an individual never wears what truly resonates with their aesthetic core, they send a silent, daily message to their unconscious mind: "My true preferences are dangerous and must remain buried."',
-          'Over time, this creates aesthetic dissociation: an individual who can no longer articulate their own tastes, desiring only whatever algorithms and peer groups sanction as acceptable.',
-          'Authentic individuals are not born with superhuman confidence. Rather, they have developed somatic tolerance for being briefly perceived. They understand that a second look from a passerby is not a verdict of exile, but merely an acknowledgment of life.',
+          'Chronic blending erodes self-worth by teaching the subconscious that one’s authentic tastes and instincts are dangerous and must remain repressed. When an individual continuously suppresses their personal aesthetic preference, they develop an internal alienation that limits self-assertion.',
+          'Authentic individuals are not born with superhuman confidence. Rather, they have developed somatic tolerance for being briefly perceived, recognizing that a second glance is an acknowledgment of presence rather than exile.',
         ],
       },
     ],
@@ -412,7 +406,9 @@ export const ARTICLES: Article[] = [
       texturePattern: 'scales',
       symbolLabel: 'TRIBAL CAMOUFLAGE',
     },
-    imageUrl: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/art-05.webp',
+    secondaryImageUrl: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=70&fm=webp',
+    imageAlt: 'Distinctive personal fashion outfit walking through an urban crowd exploring conformity versus authentic style in the psychology of fashion',
     imageCredit: 'Cleo Vermhirn / Unsplash',
     comments: [
       {
@@ -453,20 +449,18 @@ export const ARTICLES: Article[] = [
     sections: [
       {
         id: 'sec-1',
-        heading: '01. Somatosensory Priming: The Mind Follows the Skin',
+        heading: '01. How does somatosensory touch prime interpersonal warmth?',
         paragraphs: [
-          'In modern cognitive science, the theory of embodied cognition asserts that abstract thought is rooted in physical metaphors. We speak of a "hard person," a "rough meeting," or a "warm personality." These are not mere poetic tropes; they reflect the shared neural substrate between physical touch and social evaluation.',
-          'When an individual is dressed in stiff, scratchy synthetic fibers that itch against the neck and pinch the waist, the autonomic nervous system is subjected to chronic, low-level sensory distress.',
-          'The brain misattributes this subtle irritation to its external environment: meetings seem more tedious, colleagues appear more demanding, and patience evaporates. Conversely, soft, breathable textiles reduce baseline sympathetic tone, expanding emotional bandwidth for complex social negotiation.',
+          'Somatosensory touch primes interpersonal warmth because the neural pathways processing physical texture overlap directly with regions evaluating social trust and empathy. When an individual wears soft, breathable fabrics like cashmere or washed linen, lower autonomic tension expands emotional bandwidth for patience and collaboration.',
+          'Conversely, when an individual is dressed in stiff, scratchy synthetic fibers that itch against the neck and pinch the waist, the autonomic nervous system is subjected to chronic, low-level sensory distress.',
         ],
         pullQuote: 'Your nervous system does not differentiate between a rough world and a rough fabric rubbing against your collarbone.',
       },
       {
         id: 'sec-2',
-        heading: '02. C-Tactile Fibers and the Oxytocin Pathway',
+        heading: '02. How do C-tactile skin fibers stimulate oxytocin release?',
         paragraphs: [
-          'Mammalian skin is equipped with a specialized network of non-myelinated nerve endings known as C-tactile afferent fibers. Unlike sensory fibers that detect heat or pain, C-tactile fibers respond exclusively to gentle, slow, warm tactile stimulation—the biological hallmark of grooming and maternal embrace.',
-          'When we wear soft, enveloping natural fibers like Mongolian cashmere, boiled wool, or washed organic cotton, our movement continuously stimulates these fibers. This gentle friction facilitates micro-releases of oxytocin, dampening cortisol production.',
+          'C-tactile skin fibers stimulate oxytocin release by registering gentle, slow tactile friction that mimics the biological frequency of maternal embrace and grooming. When soft natural wools glide over these unmyelinated nerve endings throughout the day, the body experiences sustained micro-doses of calming hormones that lower baseline cortisol.',
           'In this light, high-quality fabric is not an indulgence of luxury; it is a bio-compatible interface that protects the wearer from environmental sensory overwhelm.',
         ],
       },
@@ -484,7 +478,9 @@ export const ARTICLES: Article[] = [
       texturePattern: 'weave',
       symbolLabel: 'HAPTIC HOMEOSTASIS',
     },
-    imageUrl: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/art-06.webp',
+    secondaryImageUrl: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=70&fm=webp',
+    imageAlt: 'Folded neutral cashmere knitwear textures showing tactile soothing fabrics that down-regulate cortisol and how clothes affect mood',
     imageCredit: 'Rocknwool / Unsplash',
     comments: [
       {
@@ -525,20 +521,18 @@ export const ARTICLES: Article[] = [
     sections: [
       {
         id: 'sec-1',
-        heading: '01. The Biological Toll of the Morning Closet',
+        heading: '01. Why does morning wardrobe choice trigger ego depletion?',
         paragraphs: [
-          'Consider the psychological gauntlet of opening an overcrowded closet: Will it rain? Whom will I see? Does this silhouette make me look tired? Are these pants too formal for the 2:00 PM workshop? By 7:30 AM, before you have set foot outside your home, you have burned crucial units of glucose and prefrontal bandwidth.',
-          'Social psychologist Roy Baumeister coined the term "ego depletion" to describe the biological reality that self-control and decision-making draw on the same limited reservoir of energy.',
+          'Morning wardrobe choice triggers ego depletion because each sartorial decision draws upon the prefrontal cortex’s finite daily reservoir of glucose and willpower. Selecting garments requires rapid micro-evaluations of weather, social status, color harmony, and self-image, expending energy needed later for high-stakes problem solving.',
           'When you exhaust this reservoir on trivial choices at dawn, you are significantly more likely to display impatience, make impulsive financial compromises, or suffer creative stagnation by mid-afternoon.',
         ],
         pullQuote: 'You will see I wear only grey or blue suits. I am trying to pare down decisions. I don’t want to make decisions about what I’m eating or wearing. Because I have too many other decisions to make. — Barack Obama',
       },
       {
         id: 'sec-2',
-        heading: '02. Identity Consolidation Through Constraint',
+        heading: '02. How does a signature uniform consolidate personal identity?',
         paragraphs: [
-          'There is a common misconception that adopting a personal uniform makes one boring or invisible. In reality, historical analysis proves the opposite: uniform dressing creates iconic, unforgettable personal branding.',
-          'When you see a signature silhouette repeated with quiet conviction—whether Fran Lebowitz’s Anderson & Sheppard jackets or Andy Warhol’s striped marinières—the brain recognizes profound self-possession.',
+          'A signature uniform consolidates personal identity by replacing chronic aesthetic insecurity with an unshakeable visual trademark. Repeating a silhouette with quiet conviction signals profound self-possession and purpose, freeing cognitive bandwidth to focus on creative execution rather than superficial novelty.',
           'A uniform announces to the world that you know who you are, what fits your body, and what your purpose is. It removes the desperation of constantly asking: "Does this look like me?"',
         ],
       },
@@ -556,7 +550,9 @@ export const ARTICLES: Article[] = [
       texturePattern: 'stripes',
       symbolLabel: 'COGNITIVE CLARITY',
     },
-    imageUrl: 'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/art-07.webp',
+    secondaryImageUrl: 'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=70&fm=webp',
+    imageAlt: 'Monochromatic minimalist wardrobe capsule on wooden hangers demonstrating cognitive clarity and decision fatigue relief in the psychology of dress',
     imageCredit: 'Sarah Dorweiler / Unsplash',
     comments: [
       {
@@ -597,8 +593,9 @@ export const ARTICLES: Article[] = [
     sections: [
       {
         id: 'sec-1',
-        heading: '01. The Kinetic Chain and the Upright Mind',
+        heading: '01. How do shoes affect posture and spinal alignment?',
         paragraphs: [
+          'Shoes affect posture by acting as the kinetic foundation of the human skeleton, determining calcaneal balance, pelvic tilt, and spinal curvature. Solid soles and firm heel support center the pelvis and open the thoracic spine, promoting effortless upright alignment and deep diaphragmatic breathing.',
           'Biomechanical and neurological research reveals how shoes affect posture from the ground up, dictating the alignment of the entire skeletal column. A shoe with zero arch stability or an excessively soft foam sole causes internal rotation of the femur, an anterior pelvic tilt, and a compensatory slouch in the upper thoracic spine.',
           'When your skeleton is in structural misalignment, breathing becomes shallow and diaphragmatic expansion is restricted. The brain interprets this shallow respiration as chronic low-grade anxiety.',
           'Conversely, putting on a pair of solidly constructed boots or firm dress shoes creates an immediate upward kinetic chain: calves engage, hamstrings stabilize, pelvis centers, and the sternum rises without conscious effort.',
@@ -607,8 +604,9 @@ export const ARTICLES: Article[] = [
       },
       {
         id: 'sec-2',
-        heading: '02. Acoustic Authority: The Sound of Presence',
+        heading: '02. Why do shoes and confidence link together through footwear psychology?',
         paragraphs: [
+          'Shoes and confidence are linked through footwear psychology because firm ground contact activates proprioceptive stability, while acoustic cadence communicates commanding presence. The solid stride of leather-soled shoes naturally decelerates rushed walking, reinforcing composure and self-assurance before entering any room.',
           'The somatic bridge between shoes and confidence begins at the ground plane. When feet are anchored by Goodyear-welted leather or stable soles, proprioceptors send signals of equilibrium to the cerebellum, lowering defensive vigilance and allowing upright non-verbal authority.',
           'Within footwear psychology, acoustic feedback also plays a decisive role. The soft, squeaking sound of foam trainers signals urgency or stealth. By contrast, the clean, crisp cadence of a stacked leather heel or hard wooden sole striking a hardwood floor announces presence before speech is even initiated, naturally pacing our speech and discouraging nervous rushing.',
         ],
@@ -634,7 +632,9 @@ export const ARTICLES: Article[] = [
       texturePattern: 'tread',
       symbolLabel: 'GRAVITATIONAL ANCHOR',
     },
-    imageUrl: 'https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/art-08.webp',
+    secondaryImageUrl: 'https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=700&q=68&fm=webp',
+    imageAlt: 'Classic welted leather dress brogues and boots resting on stone paving demonstrating how shoes affect posture, shoes and confidence, and footwear psychology',
     imageCredit: 'NordWood Themes / Unsplash',
     comments: [
       {
@@ -675,29 +675,19 @@ export const ARTICLES: Article[] = [
     sections: [
       {
         id: 'sec-1',
-        heading: '01. The Adolescent Armor and Tribal Banners',
+        heading: '01. Why does adolescent fashion resemble a psychological battlefield?',
         paragraphs: [
-          'In our teenage years, clothing is a high-stakes battlefield. We obsessively scrutinize sneaker releases, band t-shirts, and subcultural signifiers. This is not shallow vanity; it is the vital psychological work of individuation from the nuclear family.',
-          'The teenager uses clothes to signal: "I am distinct from my parents, yet safely sheltered within my peer subculture." Sticking out within the tribe is dangerous, but blending into the adult world is worse.',
+          'Adolescent fashion resembles a psychological battlefield because teenagers must simultaneously differentiate from their parents and seek protective shelter within peer subcultures. Clothes become crucial behavioral markers staking a claim in the emerging territory of independent adulthood.',
           'Every torn knee, oversized sleeve, and studded belt is a flag staked into the terra incognita of an emerging identity.',
         ],
         pullQuote: 'The clothes we refuse to wear tell an even truer story of our transformation than the ones we keep.',
       },
       {
         id: 'sec-2',
-        heading: '02. Midlife Purging: Killing the Aspirational Self',
+        heading: '02. What makes the midlife wardrobe purge psychologically essential?',
         paragraphs: [
-          'Between ages 35 and 48, almost everyone undergoes a profound closet crisis. You gaze at dresses meant for glamorous galas you never attend, leather jackets meant for a rebel you never were, and stifling suits that belong to a corporate ladder you no longer wish to climb.',
-          'These garments are ghosts: the "Aspirational Selves" that we purchased out of guilt, expectation, or longing. Clinging to them causes chronic, low-level shame every time we open the wardrobe.',
+          'The midlife wardrobe purge is psychologically essential because it releases imaginary "aspirational selves" purchased out of social guilt or bygone expectations. Letting go of unworn fantasy garments allows an individual to make peace with their authentic lifestyle and consolidated personal reality.',
           'The great midlife purge is an act of deep psychological maturity. To give away the garments of an imaginary life is to finally make peace with the person you actually are.',
-        ],
-      },
-      {
-        id: 'sec-3',
-        heading: '03. The Elder Renaissance: The Dissolution of Apology',
-        paragraphs: [
-          'One of the most glorious sights in cultural anthropology is the aesthetic freedom of the stylish elder—the 75-year-old in sweeping cobalt kaftans, oversized tortoiseshell spectacles, and silver rings on every knuckle.',
-          'Having completed the labor of building careers, raising families, and navigating social competition, the elder recognizes that the opinions of strangers are paper-thin. Dressing transforms into pure celebratory art, sovereign comfort, and radiant joy.',
         ],
       },
     ],
@@ -714,7 +704,9 @@ export const ARTICLES: Article[] = [
       texturePattern: 'spiral',
       symbolLabel: 'PSYCHIC METAMORPHOSIS',
     },
-    imageUrl: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/art-09.webp',
+    secondaryImageUrl: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=70&fm=webp',
+    imageAlt: 'Historic vintage apparel hanging on a wooden rack showcasing fashion metamorphosis and psychological growth across decades in the psychology of fashion',
     imageCredit: 'Prudence Earl / Unsplash',
     comments: [
       {
@@ -755,21 +747,19 @@ export const ARTICLES: Article[] = [
     sections: [
       {
         id: 'sec-1',
-        heading: '01. The Subconscious Message of Disposability',
+        heading: '01. Why does disposable fashion erode internal dignity?',
         paragraphs: [
-          'Every human behavior carries an internal meaning that the subconscious registers with ruthless precision. When you wear a polyester blouse that cost the same as a sandwich, your unconscious mind understands the equation: this item was made without care, by exploited labor, of petroleum byproducts, and is destined for a landfill in 90 days.',
-          'Wrapping your living, breathing body in garments that you yourself hold in contempt creates a subtle erosion of dignity. It teaches you to accept transience and cheap substitutes in your most intimate physical boundaries.',
+          'Disposable fashion erodes internal dignity because wrapping our living bodies in cheap, transient petroleum fibers subconsciously treats our personal physical boundary as garbage-in-waiting. Investing in durable, natural textiles honors the wearer with a sense of permanence and intrinsic self-worth.',
           'By contrast, holding a garment crafted from Scottish tweed, Irish linen, or hand-loomed silk instills a subconscious respect for time, natural resources, and human patience.',
         ],
         pullQuote: 'How can you cultivate enduring self-respect when the clothes on your back are designed to disintegrate by autumn?',
       },
       {
         id: 'sec-2',
-        heading: '02. Visible Mending as Psychological Healing',
+        heading: '02. How does visible mending offer psychological healing?',
         paragraphs: [
-          'In traditional Japanese philosophy, the concepts of wabi-sabi and boro celebrate the beauty of impermanence and repair. When a tear in indigo-dyed cotton is meticulously reinforced with contrasting white sashiko stitching, the garment is not ruined—it has gained character and history.',
+          'Visible mending offers psychological healing by transforming tears into beautiful marks of resilience, demonstrating through tangible handcraft that damaged things can be restored with greater strength. The practice of sashiko and boro activates a profound sense of agency and care.',
           'In clinical art therapy, the act of repairing a beloved jacket or darning a moth hole in a wool sweater activates profound feelings of agency and restorative hope.',
-          'It provides a tangible, somatic proof that broken things can be made whole and even more resilient than before.',
         ],
       },
     ],
@@ -786,7 +776,9 @@ export const ARTICLES: Article[] = [
       texturePattern: 'botanical',
       symbolLabel: 'ENDURING STEWARDSHIP',
     },
-    imageUrl: 'https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?auto=format&fit=crop&w=1200&q=80',
+    imageUrl: '/images/art-10.webp',
+    secondaryImageUrl: 'https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?auto=format&fit=crop&w=750&q=68&fm=webp',
+    imageAlt: 'Artisanal natural linen textiles and visible sashiko hand-stitching showing sustainable dressing and moral psychology of dress',
     imageCredit: 'Teona Swift / Unsplash',
     comments: [
       {

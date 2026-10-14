@@ -86,8 +86,11 @@ export default function App() {
       return;
     }
 
-    // Check if it matches any article slug (e.g. clothing-as-emotional-armor, dopamine-dressing, how-shoes-affect-posture)
-    const matchedArticle = articles.find((a) => a.slug === slug || a.slug === cleanPath.replace(/^\//, ''));
+    // Support both /dressing-for-confidence and previous /clothing-as-emotional-armor route
+    const targetSlug = slug === 'clothing-as-emotional-armor' ? 'dressing-for-confidence' : slug;
+
+    // Check if it matches any article slug
+    const matchedArticle = articles.find((a) => a.slug === targetSlug || a.slug === cleanPath.replace(/^\//, ''));
     if (matchedArticle) {
       setSelectedArticle(matchedArticle);
       setCurrentView('detail');
@@ -97,7 +100,7 @@ export default function App() {
           metaDescription: matchedArticle.seo.metaDescription,
           mainKeyword: matchedArticle.seo.mainKeyword,
           relatedKeywords: matchedArticle.seo.relatedKeywords,
-          canonicalPath: cleanPath,
+          canonicalPath: `/${matchedArticle.slug}`,
           ogType: 'article',
           h1: matchedArticle.title,
         });
@@ -196,7 +199,8 @@ export default function App() {
   };
 
   const handleSelectArticleBySlug = (slug: string) => {
-    const found = articles.find((a) => a.slug === slug);
+    const targetSlug = slug === 'clothing-as-emotional-armor' ? 'dressing-for-confidence' : slug;
+    const found = articles.find((a) => a.slug === targetSlug);
     if (found) {
       handleSelectArticle(found);
     }
@@ -237,7 +241,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FBF9F5] text-[#1C1917] flex flex-col font-sans selection:bg-[#EBE3D5] selection:text-[#1C1917]">
-      {/* Header (Top Bar Contract Compliant with Real URLs) */}
+      {/* Header (Top Bar Contract Compliant with Real URLs and Descriptive Labels) */}
       <Header
         currentView={currentView}
         onNavigate={handleNavigateView}
@@ -265,6 +269,7 @@ export default function App() {
               <button
                 onClick={() => setIsSearchOpen(false)}
                 className="p-1 text-stone-400 hover:text-stone-700 cursor-pointer"
+                aria-label="Dismiss search modal"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -273,7 +278,7 @@ export default function App() {
             <div className="mt-4 max-h-80 overflow-y-auto space-y-2">
               {filteredArticles.length === 0 ? (
                 <p className="text-xs text-stone-500 py-6 text-center">
-                  No treatises matched "{searchQuery}". Try terms like "clothing as emotional armor", "dopamine dressing", or "shoes".
+                  No treatises matched "{searchQuery}". Try terms like "dressing for confidence", "dopamine dressing", or "shoes".
                 </p>
               ) : (
                 filteredArticles.map((art) => (
@@ -286,6 +291,7 @@ export default function App() {
                       setIsSearchOpen(false);
                     }}
                     className="p-3 rounded hover:bg-[#FBF9F5] cursor-pointer transition-colors flex items-center justify-between group block"
+                    aria-label={`Read: ${art.title}`}
                   >
                     <div>
                       <span className="text-[11px] font-mono uppercase text-stone-400 block">
@@ -349,15 +355,15 @@ export default function App() {
             </p>
             {/* Main Keyword in H1 */}
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] text-stone-900 font-medium tracking-tight mb-4 text-balance">
-              Psychology of Dress: Clothes & Mood
+              Psychology of Fashion: Clothes & Mood
             </h1>
             {/* Main Keyword naturally in first paragraph */}
             <p className="text-stone-700 text-base sm:text-lg leading-relaxed font-sans max-w-3xl mb-3">
-              Explore the <strong>psychology of dress</strong>: how what you wear shapes your mood, confidence, and identity. Every day, the fabrics, cuts, and colors we select communicate with our nervous system and alter how we think, decide, and interact with the world.
+              Explore the <strong>psychology of fashion</strong>: how what you wear shapes your mood, confidence and identity. Read our research-led psychology of dress articles exploring the deep cognitive and emotional connections between clothing and the human mind.
             </p>
             {/* Related Keywords naturally in the body */}
             <p className="text-stone-600 text-sm sm:text-base leading-relaxed font-sans max-w-3xl">
-              Grounded in the clinical science of <strong>enclothed cognition</strong> and tactile neurobiology, our research explores <strong>how clothes affect mood</strong>, posture, and social authority. Browse our 10 curatorial treatises below.
+              Grounded in empirical research in the <strong>psychology of dress</strong> and tactile neurobiology, our curators analyze <strong>how clothes affect mood</strong>, decision-making velocity, and interpersonal presence across 10 peer-reviewed curatorial treatises.
             </p>
           </section>
 
@@ -369,7 +375,7 @@ export default function App() {
             onToggleBookmark={handleToggleBookmark}
           />
 
-          {/* Interactive Tools Teaser Banner with Semantic URLs */}
+          {/* Interactive Tools Teaser Banner with Descriptive Semantic Anchor Text */}
           <section className="my-12 grid grid-cols-1 md:grid-cols-2 gap-6">
             <a
               href="/cognition-lab"
@@ -378,11 +384,12 @@ export default function App() {
                 handleNavigateView('lab');
               }}
               className="p-6 rounded border border-[#E7E2D8] bg-[#F7F4EE] hover:border-stone-400 transition-all cursor-pointer group flex items-start justify-between block"
+              aria-label="Explore: Enclothed Cognition Lab Interactive Specimen Explorer"
             >
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-stone-700">
                   <Compass className="w-4 h-4" />
-                  <span>Enclothed Cognition Lab</span>
+                  <span>Explore: Enclothed Cognition Lab</span>
                 </div>
                 <h3 className="font-serif text-xl font-medium text-stone-900 group-hover:text-stone-700 transition-colors">
                   Interactive Garment Specimen Explorer
@@ -401,11 +408,12 @@ export default function App() {
                 handleNavigateView('quiz');
               }}
               className="p-6 rounded border border-[#E7E2D8] bg-[#F7F4EE] hover:border-stone-400 transition-all cursor-pointer group flex items-start justify-between block"
+              aria-label="Launch: Archetype Diagnostic Tool"
             >
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-stone-700">
                   <Sparkles className="w-4 h-4" />
-                  <span>Archetype Diagnostic Tool</span>
+                  <span>Launch: Archetype Diagnostic Tool</span>
                 </div>
                 <h3 className="font-serif text-xl font-medium text-stone-900 group-hover:text-stone-700 transition-colors">
                   Analyze Your Wardrobe Psychology Footprint
@@ -418,13 +426,20 @@ export default function App() {
             </a>
           </section>
 
-          {/* Curated Secondary Features (Tier 2 Salience) */}
+          {/* Curated Secondary Features with Q&A Heading and Direct Answer Opening */}
           <section className="mb-14">
-            <div className="flex items-center justify-between pb-3 border-b border-[#E7E2D8] mb-6">
-              <span className="text-xs uppercase tracking-widest font-sans font-semibold text-stone-500">
+            <div className="pb-3 border-b border-[#E7E2D8] mb-6">
+              <span className="text-xs uppercase tracking-widest font-sans font-semibold text-stone-500 block mb-1">
                 CURATED FEATURE ESSAYS · VOL. VIII
               </span>
-              <span className="text-xs text-stone-400 font-mono">TIER II PERSPECTIVES</span>
+              {/* Question Heading 1 for Homepage */}
+              <h2 className="font-serif text-xl sm:text-2xl font-medium text-stone-900 mb-2">
+                How do clothing choices shape emotional armor and mood?
+              </h2>
+              {/* Direct 1-2 sentence answer opening */}
+              <p className="text-sm text-stone-600 font-sans max-w-3xl leading-relaxed">
+                Clothing choices shape emotional armor and mood by acting as physical sensory barriers that down-regulate stress and activate neural reward pathways. Weighty structured textiles insulate the body against social anxiety, while saturated chromatic wavelengths stimulate dopamine synthesis.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -441,19 +456,24 @@ export default function App() {
             </div>
           </section>
 
-          {/* The Complete 10 Treatises Archive with Category Filtering */}
+          {/* The Complete 10 Treatises Archive with Q&A Heading, Direct Answer Opening, and Category Filtering */}
           <section className="mb-16">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#E7E2D8] mb-8">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-[#E7E2D8] mb-8">
               <div>
                 <span className="text-xs uppercase tracking-widest font-sans font-semibold text-stone-500 block mb-1">
                   COMPLETE DISCOURSE COMPENDIUM
                 </span>
-                <h2 className="font-serif text-2xl font-medium text-stone-900">
-                  All Treatises on Fashion & Identity
+                {/* Question Heading 2 for Homepage */}
+                <h2 className="font-serif text-2xl font-medium text-stone-900 mb-2">
+                  Which curatorial treatises explore the psychology of dress?
                 </h2>
+                {/* Direct 1-2 sentence answer opening */}
+                <p className="text-sm text-stone-600 font-sans max-w-2xl leading-relaxed">
+                  Our compendium features 10 peer-reviewed investigations examining how garments, textiles, and footwear shape cognitive focus and personal identity. Browse the complete collection below or filter by psychological category.
+                </p>
               </div>
 
-              {/* Functional Segmented Filter Tabs */}
+              {/* Functional Segmented Filter Tabs with Accessible Labels */}
               <div className="flex items-center gap-1.5 overflow-x-auto pb-1 max-w-full">
                 {categories.map((cat) => (
                   <button
@@ -464,6 +484,7 @@ export default function App() {
                         ? 'bg-[#1C1917] text-white shadow-xs'
                         : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/50'
                     }`}
+                    aria-label={`Filter treatises by category: ${cat}`}
                   >
                     {cat}
                   </button>

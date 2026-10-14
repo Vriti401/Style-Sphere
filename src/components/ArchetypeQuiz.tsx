@@ -222,7 +222,7 @@ export const ArchetypeQuiz: React.FC<ArchetypeQuizProps> = ({
                       </h5>
                     </div>
                     <span className="text-xs font-semibold text-[#1C1917] flex items-center gap-1 mt-2">
-                      Read Essay <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                      Read: {article.title.split(':')[0]} <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                     </span>
                   </div>
                 );

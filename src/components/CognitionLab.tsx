@@ -246,12 +246,13 @@ export const CognitionLab: React.FC<CognitionLabProps> = ({
                     ? 'dopamine-dressing'
                     : selectedItem.id === 'lab-minimalist-turtleneck'
                     ? 'the-minimalist-uniform-decision-fatigue-zen'
-                    : 'clothing-as-emotional-armor';
+                    : 'dressing-for-confidence';
                 onSelectArticleBySlug(targetSlug);
               }}
               className="flex items-center gap-1.5 text-xs font-semibold text-[#1C1917] hover:underline cursor-pointer"
+              aria-label={`Read research treatise for ${selectedItem.name}`}
             >
-              <span>Read Full Curatorial Essay</span>
+              <span>Read: {selectedItem.name} Research Treatise</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>

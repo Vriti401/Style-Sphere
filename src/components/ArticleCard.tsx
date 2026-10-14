@@ -30,12 +30,13 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           href={`/${article.slug}`}
           onClick={handleArticleClick}
           className="sm:col-span-4 aspect-[4/3] rounded overflow-hidden border border-stone-800/10 block group"
-          aria-label={`Read essay: ${article.title}`}
+          aria-label={`Read: ${article.title}`}
         >
           <ArticleImage
             article={article}
             className="w-full h-full group-hover:scale-105 transition-transform duration-300"
           />
+          <span className="sr-only">Read: {article.title}</span>
         </a>
 
         <div className="sm:col-span-8 flex flex-col justify-between h-full">
@@ -85,8 +86,9 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
                 href={`/${article.slug}`}
                 onClick={handleArticleClick}
                 className="font-medium text-[#1C1917] flex items-center gap-0.5 hover:translate-x-0.5 transition-transform"
+                aria-label={`Read: ${article.title}`}
               >
-                Read Essay <ArrowUpRight className="w-3 h-3" />
+                Read: {article.title.split(':')[0]} <ArrowUpRight className="w-3 h-3" />
               </a>
             </div>
           </div>
@@ -102,12 +104,13 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           href={`/${article.slug}`}
           onClick={handleArticleClick}
           className="aspect-[4/3] rounded overflow-hidden border border-stone-800/10 mb-4 block group"
-          aria-label={`Read essay: ${article.title}`}
+          aria-label={`Read: ${article.title}`}
         >
           <ArticleImage
             article={article}
             className="w-full h-full group-hover:scale-105 transition-transform duration-300"
           />
+          <span className="sr-only">Read: {article.title}</span>
         </a>
 
         <div className="flex items-center gap-2 text-xs text-stone-500 font-sans uppercase tracking-wider mb-2">
@@ -158,8 +161,9 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             href={`/${article.slug}`}
             onClick={handleArticleClick}
             className="font-medium text-[#1C1917] flex items-center gap-0.5 hover:translate-x-0.5 transition-transform"
+            aria-label={`Read: ${article.title}`}
           >
-            Read <ArrowUpRight className="w-3 h-3" />
+            Read: {article.title.split(':')[0]} <ArrowUpRight className="w-3 h-3" />
           </a>
         </div>
       </div>
